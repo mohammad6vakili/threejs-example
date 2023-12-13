@@ -1,29 +1,28 @@
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
+// pages import
+import Home from "./pages/home/index.jsx";
+import About from "./pages/about/index.jsx";
+import Projects from "./pages/projects/index.jsx";
+import Contact from "./pages/contact/index.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
   },
   {
     path: "/about",
-    element: (
-      <div className="flex flex-col">
-        <Link to={"/"}>Back to Home</Link>
-        <Link to={"/about/next"}>Go to Next Page</Link>
-      </div>
-    ),
+    element: <About />,
   },
   {
-    path: "/about/next",
-    element: (
-      <div>
-        <Link to={"/about"}>Back to About</Link>
-      </div>
-    ),
+    path: "/contact",
+    element: <Contact />,
+  },
+  {
+    path: "/projects",
+    element: <Projects />,
   },
 ]);
 
